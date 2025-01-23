@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wusihao.monkeypicturebackend.demos.web;
+package com.wusihao.monkeypicturebackend.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wusihao.monkeypicturebackend.demos.web;
+package com.wusihao.monkeypicturebackend.controller;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

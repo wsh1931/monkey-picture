@@ -32,5 +32,5 @@ knife4j:
       default:
         api-rule: package
         api-rule-resources:
-          - com/wusihao/monkeypicturebackend/controller
+          - com.wusihao.monkeypicturebackend.controller
 
