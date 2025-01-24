@@ -7,8 +7,7 @@ const myAxios = axios.create({
   // baseURL: '',
   baseURL: 'http://localhost:8110',
   timeout: 60000,
-  withCredentials: true,
-})
+  withCredentials: true,})
 
 // 全局请求拦截器
 myAxios.interceptors.request.use(
