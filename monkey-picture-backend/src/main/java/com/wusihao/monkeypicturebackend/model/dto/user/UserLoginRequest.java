@@ -1,4 +1,4 @@
-package com.wusihao.monkeypicturebackend.model.dto;
+package com.wusihao.monkeypicturebackend.model.dto.user;
 
 import lombok.Data;
 

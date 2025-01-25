@@ -1,10 +1,14 @@
 package com.wusihao.monkeypicturebackend.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wusihao.monkeypicturebackend.model.dto.user.UserQueryRequest;
 import com.wusihao.monkeypicturebackend.model.entity.User;
 import com.wusihao.monkeypicturebackend.model.vo.LoginUserVO;
+import com.wusihao.monkeypicturebackend.model.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author 吴思豪
@@ -22,6 +26,35 @@ public interface UserService extends IService<User> {
      */
     long userRegister(String userAccount, String userPassword, String checkPassword);
 
+    /**
+     * 返回脱敏后的用户信息
+     *
+     * @param user
+     * @return {@link null}
+     * @author wusihao
+     * @date 2025/1/25 18:33
+     */
+    UserVO getUserVO(User user);
+
+    /**
+     * 返回脱敏后的用户列表
+     *
+     * @param userList
+     * @return {@link null}
+     * @author wusihao
+     * @date 2025/1/25 18:33
+     */
+    List<UserVO> getUserVOList(List<User> userList);
+
+    /**
+     * 获取查询条件
+     *
+     * @param userQueryRequest
+     * @return {@link null}
+     * @author wusihao
+     * @date 2025/1/25 18:35
+     */
+    QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
     /**
      * 获取加密方法

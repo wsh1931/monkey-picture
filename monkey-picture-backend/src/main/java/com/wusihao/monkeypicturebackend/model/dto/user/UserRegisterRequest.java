@@ -1,4 +1,4 @@
-package com.wusihao.monkeypicturebackend.model.dto;
+package com.wusihao.monkeypicturebackend.model.dto.user;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class UserRegisterRequest implements Serializable {
-    
+
     private static final long serialVersionUID = -2054005108822607257L;
     /**
      * 账号
