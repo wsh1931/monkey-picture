@@ -11,6 +11,9 @@ spring:
     url: jdbc:mysql://localhost:3306/monkey_picture
     username: root
     password: "@Uuwusihao1931"
+  ## 激活application-local 配置文件
+  profiles:
+    active: local
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
@@ -33,4 +36,3 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.wusihao.monkeypicturebackend.controller
-
