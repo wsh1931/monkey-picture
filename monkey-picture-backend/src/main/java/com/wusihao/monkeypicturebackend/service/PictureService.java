@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wusihao.monkeypicturebackend.model.dto.picture.PictureQueryRequest;
+import com.wusihao.monkeypicturebackend.model.dto.picture.PictureReviewRequest;
 import com.wusihao.monkeypicturebackend.model.dto.picture.PictureUploadRequest;
 import com.wusihao.monkeypicturebackend.model.entity.Picture;
 import com.wusihao.monkeypicturebackend.model.entity.User;
@@ -50,4 +51,22 @@ public interface PictureService extends IService<Picture> {
     Page<PictureVO> getPictureVOPage(Page<Picture> picturePage, HttpServletRequest request);
 
     void validPicture(Picture picture);
+
+    /**
+     * 图片审核
+     *
+     * @param pictureReviewRequest
+     * @param loginUser
+     */
+    void doPictureReview(PictureReviewRequest pictureReviewRequest, User loginUser);
+
+    /**
+     * 编辑图片 管理员自动过审, 其他人待审核
+     *
+     * @param picture
+     * @return {@link null}
+     * @author wusihao
+     * @date 2025/1/27 22:15
+     */
+    void fillReviewParams(Picture picture, User loginUser);
 }
