@@ -1,7 +1,16 @@
 package com.wusihao.monkeypicturebackend.service;
 
-import com.wusihao.monkeypicturebackend.model.entity.Picture;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wusihao.monkeypicturebackend.model.dto.picture.PictureQueryRequest;
+import com.wusihao.monkeypicturebackend.model.dto.picture.PictureUploadRequest;
+import com.wusihao.monkeypicturebackend.model.entity.Picture;
+import com.wusihao.monkeypicturebackend.model.entity.User;
+import com.wusihao.monkeypicturebackend.model.vo.PictureVO;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
 * @author 吴思豪
@@ -9,5 +18,36 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2025-01-26 22:30:42
 */
 public interface PictureService extends IService<Picture> {
+    /**
+     * 上传图片
+     *
+     * @param multipartFile
+     * @param pictureUploadRequest
+     * @param loginUser
+     * @return
+     */
+    PictureVO uploadPicture(MultipartFile multipartFile,
+                            PictureUploadRequest pictureUploadRequest,
+                            User loginUser);
 
+    /**
+     * 通过条件查询图片信息
+     *
+     * @param pictureQueryRequest
+     * @return {@link null}
+     * @author wusihao
+     * @date 2025/1/27 20:32
+     */
+    QueryWrapper<Picture> getQueryWrapper(PictureQueryRequest pictureQueryRequest);
+
+    /**
+     * 分页获取图片封装(单条)
+     */
+    PictureVO getPictureVO(Picture picture, HttpServletRequest request);
+    /**
+     * 分页获取图片封装(多条)
+     */
+    Page<PictureVO> getPictureVOPage(Page<Picture> picturePage, HttpServletRequest request);
+
+    void validPicture(Picture picture);
 }

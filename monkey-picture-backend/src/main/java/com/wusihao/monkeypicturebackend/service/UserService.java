@@ -56,6 +56,8 @@ public interface UserService extends IService<User> {
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
+    boolean isAdmin(User user);
+
     /**
      * 获取加密方法
      *
@@ -101,4 +103,6 @@ public interface UserService extends IService<User> {
      * @date 2025/1/24 22:41
      */
     LoginUserVO getLoginUserVO(User user);
+
+
 }

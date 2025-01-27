@@ -14,6 +14,9 @@ spring:
   ## 激活application-local 配置文件
   profiles:
     active: local
+  servlet:
+    multipart:
+      max-file-size: 10MB
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
